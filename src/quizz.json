@@ -1,0 +1,21 @@
+{
+  "title" : "My quizz",
+  "question" : [
+    {
+      "id" : 0,
+      "text" : "Question 1",
+      "responses" : [
+        {"text" : "Wrong"},
+        {"text": "Right" , "correct" : true}
+      ]
+    },
+    {
+      "id" : 1,
+      "text" : "Question 2",
+      "responses" : [
+        {"text" : "Wrong"},
+        {"text": "Right" , "correct" : true}
+      ]
+    }
+  ]
+}

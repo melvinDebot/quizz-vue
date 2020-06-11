@@ -1,0 +1,34 @@
+<template>
+  <div class="load-container">
+    <div class="loading-screen"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name : "Loader"
+}
+</script>
+
+<style>
+.load-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+.loading-screen {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: #4bedc2;
+  width: 0%;
+  height: 100%;
+}
+</style>
+
