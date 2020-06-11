@@ -11,6 +11,7 @@
               type ="radio"
               v-bind:value="response.correct" 
               v-bind:name="index" 
+              v-model="userResponses[index]"
             >
             {{ response.text }}
           </label>
@@ -24,7 +25,10 @@
       </button>
       </div>
     </div>
-    
+    <div v-show="questionIndex === quizz.question.length">
+      <h2>Quiz finished</h2>
+      <p>Total score: {{ score() }} / {{ quizz.question.length }}</p>
+    </div>
   </main>
 </template>
 
@@ -40,9 +44,10 @@ export default {
     return {
       quizz : survey,
       questionIndex: 0,
-      
+      userResponses: Array(survey.question.lenght).fill(false)
     }
   },
+
   
   methods: {
     next: function() {
@@ -51,7 +56,9 @@ export default {
     prev: function() {
       this.questionIndex--;
     },
-    
+    score: function() {
+      return this.userResponses.filter(function(val) { return val }).length;
+    }
   }
 }
 </script>
